@@ -33,7 +33,7 @@
 </div>
 
 <script>
-  const PASSWORD = "matkhau123"; // Đổi mật khẩu tại đây
+  const PASSWORD = "matkhau123"; // Thay đổi mật khẩu tại đây nếu cần
 
   function checkPassword() {
     const input = document.getElementById("password").value;
@@ -45,43 +45,56 @@
     }
   }
 
+  // Danh sách video bạn cung cấp (đã giữ nguyên tên gốc)
   const videos = [
-    { title: "Vét máng mô 1", link: "https://drive.google.com/file/d/1SE37MRK_6iL3iEWi9otBooFRce5FFc6w/preview" },
-    { title: "Vét máng mô  2", link: "https://drive.google.com/file/d/1aynAj9TBKUnssyN4299fbe4hEDpjCBvq/preview" },
-    { title: "Vét máng mô  3", link: "https://drive.google.com/file/d/1ZX7X5sRgy_loI64qjimzXQklO5TrgPCi/preview" },
-    { title: "Vét máng mô  4", link: "https://drive.google.com/file/d/1YSNS5rqIXnav_bU-o2zRZdW0AkPCsRRF/preview" },
-    { title: "Vét máng mô  5", link: "https://drive.google.com/file/d/1aivemOHWqkaziJVo2VCmJ4CkWKifLZhT/preview" },
-    { title: "móc cua mô 1", link: "https://drive.google.com/file/d/1dQinGdmA1ecIBnF8-cOp3kJxXXcm4hRB/preview" },
-    { title: "móc cua mô 2", link: "https://drive.google.com/file/d/1MBXlkus2oYt0jNe-qdgghcaRn3stUYaN/preview" },
-    { title: "móc cua mô 3", link: "https://drive.google.com/file/d/13kjuz5fW6NMW4jYfNsMN-V-JBwysy7jz/preview" },
-    { title: "móc cua mô 4", link: "https://drive.google.com/file/d/1PwwYZxaKxXvlkdLr9GqZCyjsWaxYNkYL/preview" },
-    { title: "móc cua mô 5", link: "https://drive.google.com/file/d/16y8tAhHFyBLhiZwkbptF4gXAIlaxFvhh/preview" },
-    { title: "móc cua mô 6", link: "https://drive.google.com/file/d/1Yf5WZzfXCdTgrkxoSw6UVi2BeZy2fnhW/preview" },
-    { title: "móc cua mô 7", link: "https://drive.google.com/file/d/1Oa4vs1wQJmxFlLyEP7Woo2TBysd9uzEP/preview" },
-    { title: "móc cua mô 8", link: "https://drive.google.com/file/d/1xywPCnrYjMMc1Ockc5rZx9JR7p8V7MDg/preview" },
-    { title: "mô bú cu", link: "https://drive.google.com/file/d/1JSzcS8zngU99XKGshhL_LrNcGrSlLEzW/preview" },
-    { title: "móc cua mô 9", link: "https://drive.google.com/file/d/1TE6NWEFq0psrdKvyOPS66RfIBSJ96LKy/preview" },
-    { title: "doggy mo", link: "https://drive.google.com/file/d/1W1njutU62intpBfG3-QY1VHrWEHTQwLV/preview" },
-    { title: "dit mo 1", link: "https://drive.google.com/file/d/1snvN11z3BSwmASKp9wh9NfMGFBF2oXMo/preview" },
-    { title: "dit mo 2", link: "https://drive.google.com/file/d/1i8OjGN536C2yE8KLv16wPUO65cacwoas/preview" },
-    { title: "dit mo 3", link: "https://drive.google.com/file/d/1RPxDcZkUFyccGUQ6kgH-thsD_LTRT-XC/preview" },
-    { title: "dit mo 4", link: "https://drive.google.com/file/d/1YTKWM87kxh5Zq0uzVeM391UdEFcGkoQV/preview" },
-    { title: "dit mo 5", link: "https://drive.google.com/file/d/1qBW06ZwZ-P2jyEZLoJaMJsKo4TYIAWmo/preview" },
-    { title: "dit mo 6", link: "https://drive.google.com/file/d/12w4wcc8tL-z5ENEJ7ME9kjIvxVEiLWmg/preview" },
-    { title: "dit mo 7", link: "https://drive.google.com/file/d/1NZpUI00vb1oJKds3I6DOTCloZ6e7iVPA/preview" },
-    { title: "bu ti mo", link: "https://drive.google.com/file/d/1DyTME_S4jnaj783AGM93LsX19yrVzTN9/preview" },
-    { title: "bóp vú mô 1", link: "https://drive.google.com/file/d/1w9gwC8z7vqGzIMUgV8jx3OnxxU5A7AOI/preview" },
-    { title: "bóp vú mô 2", link: "https://drive.google.com/file/d/1TueqP3qjvqmcOug-qwXRR3n4CGXhSZME/preview" },
-    { title: "mông mô 1", link: "https://drive.google.com/file/d/12Rl9rDhE_a7GiunfREL2Qly6IBRA7iE9/preview" },
-    { title: "mông mô 2", link: "https://drive.google.com/file/d/1g4n42MiPPe2yPoMDyEtj7nsILHad9ybh/preview" }
+    { title: "13y-KeQx2e4urNGPN3ArNWYrDlfhV6KEU", id: "13y-KeQx2e4urNGPN3ArNWYrDlfhV6KEU" },
+    { title: "170TS4SSSdiCElF_81nlvqEd3meLdPQHr", id: "170TS4SSSdiCElF_81nlvqEd3meLdPQHr" },
+    { title: "10PyMi-M58mIsYuhTNoCmPr11_GRwSvqM", id: "10PyMi-M58mIsYuhTNoCmPr11_GRwSvqM" },
+    { title: "15rRptR7gCyse8yQzplbrX4_riE0y3Jkg", id: "15rRptR7gCyse8yQzplbrX4_riE0y3Jkg" },
+    { title: "18xaWLPsWGmxlpwKIUjX7tytWEmy2ACSV", id: "18xaWLPsWGmxlpwKIUjX7tytWEmy2ACSV" },
+    { title: "19cOkUOlQeg1AYCeXTLwlY49L9nulf2nH", id: "19cOkUOlQeg1AYCeXTLwlY49L9nulf2nH" },
+    { title: "1-727AD6oiBNOkpw9B3mGgU2KqXj7rUlL", id: "1-727AD6oiBNOkpw9B3mGgU2KqXj7rUlL" },
+    { title: "1Bixdw31Gtn47QiNg77aCqMxavqsMnTmy", id: "1Bixdw31Gtn47QiNg77aCqMxavqsMnTmy" },
+    { title: "1DBeYRVARy7GWD4pCJ87i_WfoFNGpjMJQ", id: "1DBeYRVARy7GWD4pCJ87i_WfoFNGpjMJQ" },
+    { title: "1G-E1gV7hIR8mwXY4lpk-USLtEKk5fygp", id: "1G-E1gV7hIR8mwXY4lpk-USLtEKk5fygp" },
+    { title: "1GiAZZAM0heD8W2ZBVbZm62m_AmO7zRVr", id: "1GiAZZAM0heD8W2ZBVbZm62m_AmO7zRVr" },
+    { title: "1HMxUZ0FMOU5UvIdrduoLNIRlY7h3MYo9", id: "1HMxUZ0FMOU5UvIdrduoLNIRlY7h3MYo9" },
+    { title: "1HNqVeM_EAJ5KzOWVfoxMqdng45SvXp8B", id: "1HNqVeM_EAJ5KzOWVfoxMqdng45SvXp8B" },
+    { title: "1IoAFKDAYhS1Ag9WnuMagMSjZ4JA3q6Uf", id: "1IoAFKDAYhS1Ag9WnuMagMSjZ4JA3q6Uf" },
+    { title: "1L4j0cLeQt027lTXhZFxwWXBNOPOvGrOC", id: "1L4j0cLeQt027lTXhZFxwWXBNOPOvGrOC" },
+    { title: "1NqsmaNin4kp37a36CMNIHcC9L8vNDNUi", id: "1NqsmaNin4kp37a36CMNIHcC9L8vNDNUi" },
+    { title: "1P91HbxdyRjs-buNpgfdYIXdFA0CTA8Ny", id: "1P91HbxdyRjs-buNpgfdYIXdFA0CTA8Ny" },
+    { title: "1QYseAagLDXopQg-bh6UkHvjfZgwEulat", id: "1QYseAagLDXopQg-bh6UkHvjfZgwEulat" },
+    { title: "1XBL_UrjgMtvogeUGUUElfMC67ipzJ82x", id: "1XBL_UrjgMtvogeUGUUElfMC67ipzJ82x" },
+    { title: "1YPpXu8FtZQzXTsKK06lpCSk6BURmD3Qj", id: "1YPpXu8FtZQzXTsKK06lpCSk6BURmD3Qj" },
+    { title: "1ZPVf6EI3968KM43x06OntO9ank3_N3Us", id: "1ZPVf6EI3968KM43x06OntO9ank3_N3Us" },
+    { title: "1Zz833LSdC76BecW6SZ57Zsb0iJQ2CE_l", id: "1Zz833LSdC76BecW6SZ57Zsb0iJQ2CE_l" },
+    { title: "1baOK_i3PAr2RAXc3T53NbjQUhBLzDRYc", id: "1baOK_i3PAr2RAXc3T53NbjQUhBLzDRYc" },
+    { title: "1bmoOSBR4GFMPnypmOj-ac8-nlxmNk3NE", id: "1bmoOSBR4GFMPnypmOj-ac8-nlxmNk3NE" },
+    { title: "1cBhuStpGqIZts2fXaFn-ISO7ydamgTla", id: "1cBhuStpGqIZts2fXaFn-ISO7ydamgTla" },
+    { title: "1dmXR3MlIpZI474J1OQrg9BLR5cOwus8C", id: "1DmXR3MlIpZI474J1OQrg9BLR5cOwus8C" },
+    { title: "1fKe5lD0taDPgewhKfHpuMXufVCav5dDA", id: "1fKe5lD0taDPgewhKfHpuMXufVCav5dDA" },
+    { title: "1hV02nY71dVasr0iI3wX85jf_sEZrD3yA", id: "1hV02nY71dVasr0iI3wX85jf_sEZrD3yA" },
+    { title: "1ihjaegNHWiwYyETHx0dc7ICvaKGb_c7s", id: "1ihjaegNHWiwYyETHx0dc7ICvaKGb_c7s" },
+    { title: "1lirIoN0Ib87poZdk9ILvOfHUEW2vI60c", id: "1lirIoN0Ib87poZdk9ILvOfHUEW2vI60c" },
+    { title: "1lWk5tGW3HRPNjktPDQ1OBhZHRXysH3cS", id: "1lWk5tGW3HRPNjktPDQ1OBhZHRXysH3cS" },
+    { title: "1mX6y9L-fi8RQ7r2zkSlWIu8XARHn_7Wr", id: "1mX6y9L-fi8RQ7r2zkSlWIu8XARHn_7Wr" },
+    { title: "1mYXzT1_s29vyE6NsYJQkcNpQ4gPKUglG", id: "1mYXzT1_s29vyE6NsYJQkcNpQ4gPKUglG" },
+    { title: "1nq9u4_toxaxboB6abUEaevGPUgIRMKvf", id: "1nq9u4_toxaxboB6abUEaevGPUgIRMKvf" },
+    { title: "1nyU2TX2szwRk9A9CQxJ3a3rRaUtBNOEk", id: "1nyU2TX2szwRk9A9CQxJ3a3rRaUtBNOEk" },
+    { title: "1vxP4EYAU9HsY1mMcBmrCT9scuccfHspy", id: "1vxP4EYAU9HsY1mMcBmrCT9scuccfHspy" },
+    { title: "1x5UQKpNkaSF9DFVY53qhKkYNGTS07ncR", id: "1x5UQKpNkaSF9DFVY53qhKkYNGTS07ncR" }
   ];
+
+  // Sắp xếp theo tên
+  videos.sort((a, b) => a.title.localeCompare(b.title));
 
   const list = document.getElementById("videoList");
 
   videos.forEach(video => {
     const div = document.createElement("div");
     div.className = "video";
-    div.innerHTML = `<iframe src="${video.link}" allowfullscreen></iframe><h2>${video.title}</h2>`;
+    div.innerHTML = `<iframe src="https://drive.google.com/file/d/${video.id}/preview" allowfullscreen></iframe><h2>${video.title}</h2>`;
     list.appendChild(div);
   });
 
