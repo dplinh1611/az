@@ -1,112 +1,99 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Video Gallery</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        #search {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .video-card {
-            background: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-            border-radius: 10px;
-        }
-        h3 {
-            font-size: 16px;
-            margin: 0 0 10px 0;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #search { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .video-item iframe { width: 100%; height: 200px; border: none; }
+        .video-item p { text-align: center; }
     </style>
 </head>
 <body>
-    <input type="text" id="search" placeholder="Tìm video...">
+    <input type="text" id="search" placeholder="Tìm kiếm video...">
     <div class="grid" id="videoGrid">
         
-        <div class="video-card" data-title="video 1">
-            <h3>Video 1</h3>
-            <iframe src="https://drive.google.com/file/d/1ZTyzjoWUqkQ3ShHVysvjE4EzGYNjQEmC/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 2">
-            <h3>Video 2</h3>
-            <iframe src="https://drive.google.com/file/d/1WU4WurIfVyOJwahneA22JDbkkcjb_5n_/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 3">
-            <h3>Video 3</h3>
-            <iframe src="https://drive.google.com/file/d/1cw4vJcjof-WFVL6R5R7j4vSr3B8jshdl/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 4">
-            <h3>Video 4</h3>
-            <iframe src="https://drive.google.com/file/d/1LABNpbNVN9cIZr_WYx5i1-v5SXeIajip/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 5">
-            <h3>Video 5</h3>
-            <iframe src="https://drive.google.com/file/d/1IO2HHzxpLaY-nxyLwoEHWy1DzwEG7hJe/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 6">
-            <h3>Video 6</h3>
-            <iframe src="https://drive.google.com/file/d/1mV2Rkev9IY5Ly3yiJtGjHkEhwQpiGEIT/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 7">
-            <h3>Video 7</h3>
-            <iframe src="https://drive.google.com/file/d/1JCgaIzG1YrMR8AxUsOC4pxAWvG0gGHOA/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 8">
-            <h3>Video 8</h3>
-            <iframe src="https://drive.google.com/file/d/1y00sG39Oow7JVjt2xBywKUuLdH3_lULE/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 9">
-            <h3>Video 9</h3>
-            <iframe src="https://drive.google.com/file/d/1DXEF4YRwy4h7mfuL_CMc5-f1OKLu5UsY/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
-        <div class="video-card" data-title="video 10">
-            <h3>Video 10</h3>
-            <iframe src="https://drive.google.com/file/d/173feDXiRI8Up0F_2Av3OSTVuisVDukYr/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-        
+    <div class="video-item" data-title="Video 1">
+        <iframe src="https://drive.google.com/file/d/1ZTyzjoWUqkQ3ShHVysvjE4EzGYNjQEmC/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 1</p>
     </div>
+    
 
-    <script>
-        const searchInput = document.getElementById("search");
-        const cards = document.querySelectorAll(".video-card");
+    <div class="video-item" data-title="Video 2">
+        <iframe src="https://drive.google.com/file/d/1WU4WurIfVyOJwahneA22JDbkkcjb_5n_/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 2</p>
+    </div>
+    
 
-        searchInput.addEventListener("input", function() {
-            const query = this.value.toLowerCase();
-            cards.forEach(card => {
-                const title = card.getAttribute("data-title");
-                card.style.display = title.includes(query) ? "block" : "none";
-            });
-        });
-    </script>
-</body>
-</html>
+    <div class="video-item" data-title="Video 3">
+        <iframe src="https://drive.google.com/file/d/1cw4vJcjof-WFVL6R5R7j4vSr3B8jshdl/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 3</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 4">
+        <iframe src="https://drive.google.com/file/d/1LABNpbNVN9cIZr_WYx5i1-v5SXeIajip/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 4</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 5">
+        <iframe src="https://drive.google.com/file/d/1IO2HHzxpLaY-nxyLwoEHWy1DzwEG7hJe/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 5</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 6">
+        <iframe src="https://drive.google.com/file/d/1mV2Rkev9IY5Ly3yiJtGjHkEhwQpiGEIT/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 6</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 7">
+        <iframe src="https://drive.google.com/file/d/1JCgaIzG1YrMR8AxUsOC4pxAWvG0gGHOA/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 7</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 8">
+        <iframe src="https://drive.google.com/file/d/1y00sG39Oow7JVjt2xBywKUuLdH3_lULE/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 8</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 9">
+        <iframe src="https://drive.google.com/file/d/1DXEF4YRwy4h7mfuL_CMc5-f1OKLu5UsY/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 9</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 10">
+        <iframe src="https://drive.google.com/file/d/173feDXiRI8Up0F_2Av3OSTVuisVDukYr/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 10</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 11">
+        <iframe src="https://drive.google.com/file/d/1SQBcpA4z1Xh0Ecst13eQt5oX1M_MsdAx/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 11</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 12">
+        <iframe src="https://drive.google.com/file/d/1vE86DKEzAAYYu1-rOniDAGKejX1DzqG8/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 12</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 13">
+        <iframe src="https://drive.google.com/file/d/1_kfCWWmU0ddNIaxGf1rQltedpIE-xnJN/preview" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <p>Video 13</p>
+    </div>
+    
+
+    <div class="video-item" data-title="Video 14">
+        <iframe src="https://drive.google.com/file/d/1jnuy8gNByjZiX_Gi9luPdw3DGQAUA8uw/preview" allow="autoplay; encrypted-media" allowf
