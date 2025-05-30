@@ -21,14 +21,9 @@
 </head>
 <body>
 
-<div id="login">
-  <h2>Vui lòng nhập mật khẩu để truy cập</h2>
-  <input type="password" id="password" placeholder="Mật khẩu...">
-  <button onclick="checkPassword()">Xác nhận</button>
-  <div id="error" style="display:none;">Mật khẩu sai!</div>
 </div>
 
-<div id="main" style="display:none;">
+<div id="main">
   <h1>Danh sách Video</h1>
   <input type="text" id="search" placeholder="Tìm video...">
 <button class="folder-button" onclick="toggleFolder('folder0')">Vân</button><div class="folder-section" id="folder0"><div class="grid">
@@ -492,11 +487,11 @@
 <script>
   const PASSWORD = "Tung2104";
 
-  function checkPassword() {
+  function checkPassword() { return true; } // mật khẩu đã bị tắt
     const input = document.getElementById("password").value;
     if (input === PASSWORD) {
-      document.getElementById("login").style.display = "none";
-      document.getElementById("main").style.display = "block";
+      
+      
     } else {
       document.getElementById("error").style.display = "block";
     }
