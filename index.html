@@ -1,192 +1,112 @@
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Video Riêng Tư</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
-    h1, h2 { text-align: center; }
-    #search { display: block; margin: 20px auto; padding: 10px; width: 300px; }
-    .folder-button { display: block; margin: 10px auto; padding: 10px 20px; font-size: 16px; cursor: pointer; }
-    .folder-section { display: none; margin-top: 20px; transition: all 0.3s ease-in-out; opacity: 0; max-height: 0; overflow: hidden; }
-    .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .video { width: 360px; background: #fff; padding: 10px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .video h3 { font-size: 14px; margin: 10px 0; text-align: center; }
-    iframe { width: 100%; height: 200px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Private Video Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #search {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .video-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 10px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+        }
+    </style>
 </head>
 <body>
+    <input type="text" id="search" placeholder="Tìm video...">
+    <div class="grid" id="videoGrid">
+        
+        <div class="video-card" data-title="video 1">
+            <h3>Video 1</h3>
+            <iframe src="https://drive.google.com/file/d/1ZTyzjoWUqkQ3ShHVysvjE4EzGYNjQEmC/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 2">
+            <h3>Video 2</h3>
+            <iframe src="https://drive.google.com/file/d/1WU4WurIfVyOJwahneA22JDbkkcjb_5n_/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 3">
+            <h3>Video 3</h3>
+            <iframe src="https://drive.google.com/file/d/1cw4vJcjof-WFVL6R5R7j4vSr3B8jshdl/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 4">
+            <h3>Video 4</h3>
+            <iframe src="https://drive.google.com/file/d/1LABNpbNVN9cIZr_WYx5i1-v5SXeIajip/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 5">
+            <h3>Video 5</h3>
+            <iframe src="https://drive.google.com/file/d/1IO2HHzxpLaY-nxyLwoEHWy1DzwEG7hJe/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 6">
+            <h3>Video 6</h3>
+            <iframe src="https://drive.google.com/file/d/1mV2Rkev9IY5Ly3yiJtGjHkEhwQpiGEIT/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 7">
+            <h3>Video 7</h3>
+            <iframe src="https://drive.google.com/file/d/1JCgaIzG1YrMR8AxUsOC4pxAWvG0gGHOA/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 8">
+            <h3>Video 8</h3>
+            <iframe src="https://drive.google.com/file/d/1y00sG39Oow7JVjt2xBywKUuLdH3_lULE/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 9">
+            <h3>Video 9</h3>
+            <iframe src="https://drive.google.com/file/d/1DXEF4YRwy4h7mfuL_CMc5-f1OKLu5UsY/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+        <div class="video-card" data-title="video 10">
+            <h3>Video 10</h3>
+            <iframe src="https://drive.google.com/file/d/173feDXiRI8Up0F_2Av3OSTVuisVDukYr/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        
+    </div>
 
-<div id="main">
-  <h1>Danh sách Video</h1>
-  <input type="text" id="search" placeholder="Tìm video...">
-<button class="folder-button" onclick="toggleFolder('folder0', 0)">Vân</button>
-<div class="folder-section" id="folder0"><div class="grid" id="grid0"></div></div>
-<button class="folder-button" onclick="toggleFolder('folder1', 1)">Trần Hà Linh</button>
-<div class="folder-section" id="folder1"><div class="grid" id="grid1"></div></div>
-<button class="folder-button" onclick="toggleFolder('folder2', 2)">Yuna Ogura</button>
-<div class="folder-section" id="folder2"><div class="grid" id="grid2"></div></div>
-<button class="folder-button" onclick="toggleFolder('folder3', 3)">Min</button>
-<div class="folder-section" id="folder3"><div class="grid" id="grid3"></div></div>
-<button class="folder-button" onclick="toggleFolder('folder4', 4)">Mô</button>
-<div class="folder-section" id="folder4"><div class="grid" id="grid4"></div></div>
+    <script>
+        const searchInput = document.getElementById("search");
+        const cards = document.querySelectorAll(".video-card");
 
-</div>
-
-<script>
-  const allVideos = [
-[
-  { link: "https://drive.google.com/file/d/1ZTyzjoWUqkQ3ShHVysvjE4EzGYNjQEmC/preview", title: "Video 1" },
-  { link: "https://drive.google.com/file/d/173feDXiRI8Up0F_2Av3OSTVuisVDukYr/preview", title: "Video 10" },
-  { link: "https://drive.google.com/file/d/1SQBcpA4z1Xh0Ecst13eQt5oX1M_MsdAx/preview", title: "Video 11" },
-  { link: "https://drive.google.com/file/d/1vE86DKEzAAYYu1-rOniDAGKejX1DzqG8/preview", title: "Video 12" },
-  { link: "https://drive.google.com/file/d/1_kfCWWmU0ddNIaxGf1rQltedpIE-xnJN/preview", title: "Video 13" },
-  { link: "https://drive.google.com/file/d/1jnuy8gNByjZiX_Gi9luPdw3DGQAUA8uw/preview", title: "Video 14" },
-  { link: "https://drive.google.com/file/d/1FpvdRPZiNS0N4afkEiwko8sKuFUmackJ/preview", title: "Video 15" },
-  { link: "https://drive.google.com/file/d/1WPeXH6NSMwOR32nI-SEJqh2iHnwHZXUY/preview", title: "Video 16" },
-  { link: "https://drive.google.com/file/d/1BkcZlQxXT7uBzJ-TdyAk2UPb-8c5ORZH/preview", title: "Video 17" },
-  { link: "https://drive.google.com/file/d/1PkgZxKRAGiNXluo73wHmC56sfk7DJqHC/preview", title: "Video 18" },
-  { link: "https://drive.google.com/file/d/1rex-gj8ST6DbcZjIcGjzZlERW2dCp-K-/preview", title: "Video 19" },
-  { link: "https://drive.google.com/file/d/1WU4WurIfVyOJwahneA22JDbkkcjb_5n_/preview", title: "Video 2" },
-  { link: "https://drive.google.com/file/d/1aOpBuZg0fjKft62ddiZY96G_ELJd2gU3/preview", title: "Video 20" },
-  { link: "https://drive.google.com/file/d/1WvkIu2pK38VRYcjL0eXlgGrs6F41Omk0/preview", title: "Video 21" },
-  { link: "https://drive.google.com/file/d/1durQ-E3N27TKiVqagHNhKf8Eq2XK7y1U/preview", title: "Video 22" },
-  { link: "https://drive.google.com/file/d/1wqUdVbdxvWXH3AL8lEd2JBjIxmAVtqGj/preview", title: "Video 23" },
-  { link: "https://drive.google.com/file/d/1KsouyY7T2U9tl-SzXgkAkQ-EDmcBVJH8/preview", title: "Video 24" },
-  { link: "https://drive.google.com/file/d/1DmXR3MlIpZI474J1OQrg9BLR5cOwus8C/preview", title: "Video 25" },
-  { link: "https://drive.google.com/file/d/10PyMi-M58mIsYuhTNoCmPr11_GRwSvqM/preview", title: "Video 26" },
-  { link: "https://drive.google.com/file/d/13y-KeQx2e4urNGPN3ArNWYrDlfhV6KEU/preview", title: "Video 27" },
-  { link: "https://drive.google.com/file/d/1HNqVeM_EAJ5KzOWVfoxMqdng45SvXp8B/preview", title: "Video 28" },
-  { link: "https://drive.google.com/file/d/18xaWLPsWGmxlpwKIUjX7tytWEmy2ACSV/preview", title: "Video 29" },
-  { link: "https://drive.google.com/file/d/1cw4vJcjof-WFVL6R5R7j4vSr3B8jshdl/preview", title: "Video 3" },
-  { link: "https://drive.google.com/file/d/1hV02nY71dVasr0iI3wX85jf_sEZrD3yA/preview", title: "Video 30" },
-],
-[
-  { link: "https://drive.google.com/file/d/1cBhuStpGqIZts2fXaFn-ISO7ydamgTla/preview", title: "Video 31" },
-  { link: "https://drive.google.com/file/d/1Zz833LSdC76BecW6SZ57Zsb0iJQ2CE_l/preview", title: "Video 32" },
-  { link: "https://drive.google.com/file/d/1nq9u4_toxaxboB6abUEaevGPUgIRMKvf/preview", title: "Video 33" },
-  { link: "https://drive.google.com/file/d/1ZPVf6EI3968KM43x06OntO9ank3_N3Us/preview", title: "Video 34" },
-  { link: "https://drive.google.com/file/d/1P91HbxdyRjs-buNpgfdYIXdFA0CTA8Ny/preview", title: "Video 35" },
-],
-[
-  { link: "https://drive.google.com/file/d/1YPpXu8FtZQzXTsKK06lpCSk6BURmD3Qj/preview", title: "Video 36" },
-  { link: "https://drive.google.com/file/d/1-727AD6oiBNOkpw9B3mGgU2KqXj7rUlL/preview", title: "Video 37" },
-  { link: "https://drive.google.com/file/d/1fKe5lD0taDPgewhKfHpuMXufVCav5dDA/preview", title: "Video 38" },
-  { link: "https://drive.google.com/file/d/1QYseAagLDXopQg-bh6UkHvjfZgwEulat/preview", title: "Video 39" },
-  { link: "https://drive.google.com/file/d/1LABNpbNVN9cIZr_WYx5i1-v5SXeIajip/preview", title: "Video 4" },
-  { link: "https://drive.google.com/file/d/19cOkUOlQeg1AYCeXTLwlY49L9nulf2nH/preview", title: "Video 40" },
-  { link: "https://drive.google.com/file/d/1mX6y9L-fi8RQ7r2zkSlWIu8XARHn_7Wr/preview", title: "Video 41" },
-  { link: "https://drive.google.com/file/d/1Bixdw31Gtn47QiNg77aCqMxavqsMnTmy/preview", title: "Video 42" },
-  { link: "https://drive.google.com/file/d/1lirIoN0Ib87poZdk9ILvOfHUEW2vI60c/preview", title: "Video 43" },
-  { link: "https://drive.google.com/file/d/1_88hqnpmaPAwm_u-yn_qmcqb33et_NaS/preview", title: "Video 44" },
-  { link: "https://drive.google.com/file/d/1GiAZZAM0heD8W2ZBVbZm62m_AmO7zRVr/preview", title: "Video 45" },
-  { link: "https://drive.google.com/file/d/1vxP4EYAU9HsY1mMcBmrCT9scuccfHspy/preview", title: "Video 46" },
-],
-[
-  { link: "https://drive.google.com/file/d/1bmoOSBR4GFMPnypmOj-ac8-nlxmNk3NE/preview", title: "Video 47" },
-  { link: "https://drive.google.com/file/d/1OotgqeFu2W5e83R7LTtlNQkXwls8m0th/preview", title: "Video 48" },
-  { link: "https://drive.google.com/file/d/1lWk5tGW3HRPNjktPDQ1OBhZHRXysH3cS/preview", title: "Video 49" },
-  { link: "https://drive.google.com/file/d/1IO2HHzxpLaY-nxyLwoEHWy1DzwEG7hJe/preview", title: "Video 5" },
-  { link: "https://drive.google.com/file/d/1nyU2TX2szwRk9A9CQxJ3a3rRaUtBNOEk/preview", title: "Video 50" },
-  { link: "https://drive.google.com/file/d/15rRptR7gCyse8yQzplbrX4_riE0y3Jkg/preview", title: "Video 51" },
-  { link: "https://drive.google.com/file/d/1NqsmaNin4kp37a36CMNIHcC9L8vNDNUi/preview", title: "Video 52" },
-  { link: "https://drive.google.com/file/d/1DBeYRVARy7GWD4pCJ87i_WfoFNGpjMJQ/preview", title: "Video 53" },
-  { link: "https://drive.google.com/file/d/1L4j0cLeQt027lTXhZFxwWXBNOPOvGrOC/preview", title: "Video 54" },
-  { link: "https://drive.google.com/file/d/1x5UQKpNkaSF9DFVY53qhKkYNGTS07ncR/preview", title: "Video 55" },
-  { link: "https://drive.google.com/file/d/170TS4SSSdiCElF_81nlvqEd3meLdPQHr/preview", title: "Video 56" },
-  { link: "https://drive.google.com/file/d/1mYXzT1_s29vyE6NsYJQkcNpQ4gPKUglG/preview", title: "Video 57" },
-  { link: "https://drive.google.com/file/d/1XBL_UrjgMtvogeUGUUElfMC67ipzJ82x/preview", title: "Video 58" },
-  { link: "https://drive.google.com/file/d/1baOK_i3PAr2RAXc3T53NbjQUhBLzDRYc/preview", title: "Video 59" },
-  { link: "https://drive.google.com/file/d/1mV2Rkev9IY5Ly3yiJtGjHkEhwQpiGEIT/preview", title: "Video 6" },
-  { link: "https://drive.google.com/file/d/1IoAFKDAYhS1Ag9WnuMagMSjZ4JA3q6Uf/preview", title: "Video 60" },
-  { link: "https://drive.google.com/file/d/1G-E1gV7hIR8mwXY4lpk-USLtEKk5fygp/preview", title: "Video 61" },
-  { link: "https://drive.google.com/file/d/1g4n42MiPPe2yPoMDyEtj7nsILHad9ybh/preview", title: "Video 62" },
-  { link: "https://drive.google.com/file/d/12Rl9rDhE_a7GiunfREL2Qly6IBRA7iE9/preview", title: "Video 63" },
-  { link: "https://drive.google.com/file/d/1TueqP3qjvqmcOug-qwXRR3n4CGXhSZME/preview", title: "Video 64" },
-],
-[
-  { link: "https://drive.google.com/file/d/1w9gwC8z7vqGzIMUgV8jx3OnxxU5A7AOI/preview", title: "Video 65" },
-  { link: "https://drive.google.com/file/d/1DyTME_S4jnaj783AGM93LsX19yrVzTN9/preview", title: "Video 66" },
-  { link: "https://drive.google.com/file/d/1NZpUI00vb1oJKds3I6DOTCloZ6e7iVPA/preview", title: "Video 67" },
-  { link: "https://drive.google.com/file/d/12w4wcc8tL-z5ENEJ7ME9kjIvxVEiLWmg/preview", title: "Video 68" },
-  { link: "https://drive.google.com/file/d/1qBW06ZwZ-P2jyEZLoJaMJsKo4TYIAWmo/preview", title: "Video 69" },
-  { link: "https://drive.google.com/file/d/1JCgaIzG1YrMR8AxUsOC4pxAWvG0gGHOA/preview", title: "Video 7" },
-  { link: "https://drive.google.com/file/d/1YTKWM87kxh5Zq0uzVeM391UdEFcGkoQV/preview", title: "Video 70" },
-  { link: "https://drive.google.com/file/d/1RPxDcZkUFyccGUQ6kgH-thsD_LTRT-XC/preview", title: "Video 71" },
-  { link: "https://drive.google.com/file/d/1i8OjGN536C2yE8KLv16wPUO65cacwoas/preview", title: "Video 72" },
-  { link: "https://drive.google.com/file/d/1snvN11z3BSwmASKp9wh9NfMGFBF2oXMo/preview", title: "Video 73" },
-  { link: "https://drive.google.com/file/d/1W1njutU62intpBfG3-QY1VHrWEHTQwLV/preview", title: "Video 74" },
-  { link: "https://drive.google.com/file/d/1TE6NWEFq0psrdKvyOPS66RfIBSJ96LKy/preview", title: "Video 75" },
-  { link: "https://drive.google.com/file/d/1JSzcS8zngU99XKGshhL_LrNcGrSlLEzW/preview", title: "Video 76" },
-  { link: "https://drive.google.com/file/d/1xywPCnrYjMMc1Ockc5rZx9JR7p8V7MDg/preview", title: "Video 77" },
-  { link: "https://drive.google.com/file/d/1Oa4vs1wQJmxFlLyEP7Woo2TBysd9uzEP/preview", title: "Video 78" },
-  { link: "https://drive.google.com/file/d/1Yf5WZzfXCdTgrkxoSw6UVi2BeZy2fnhW/preview", title: "Video 79" },
-  { link: "https://drive.google.com/file/d/1y00sG39Oow7JVjt2xBywKUuLdH3_lULE/preview", title: "Video 8" },
-  { link: "https://drive.google.com/file/d/16y8tAhHFyBLhiZwkbptF4gXAIlaxFvhh/preview", title: "Video 80" },
-  { link: "https://drive.google.com/file/d/1PwwYZxaKxXvlkdLr9GqZCyjsWaxYNkYL/preview", title: "Video 81" },
-  { link: "https://drive.google.com/file/d/13kjuz5fW6NMW4jYfNsMN-V-JBwysy7jz/preview", title: "Video 82" },
-  { link: "https://drive.google.com/file/d/1MBXlkus2oYt0jNe-qdgghcaRn3stUYaN/preview", title: "Video 83" },
-  { link: "https://drive.google.com/file/d/1dQinGdmA1ecIBnF8-cOp3kJxXXcm4hRB/preview", title: "Video 84" },
-  { link: "https://drive.google.com/file/d/1aivemOHWqkaziJVo2VCmJ4CkWKifLZhT/preview", title: "Video 85" },
-  { link: "https://drive.google.com/file/d/1YSNS5rqIXnav_bU-o2zRZdW0AkPCsRRF/preview", title: "Video 86" },
-  { link: "https://drive.google.com/file/d/1ZX7X5sRgy_loI64qjimzXQklO5TrgPCi/preview", title: "Video 87" },
-  { link: "https://drive.google.com/file/d/1aynAj9TBKUnssyN4299fbe4hEDpjCBvq/preview", title: "Video 88" },
-  { link: "https://drive.google.com/file/d/1SE37MRK_6iL3iEWi9otBooFRce5FFc6w/preview", title: "Video 89" },
-  { link: "https://drive.google.com/file/d/1DXEF4YRwy4h7mfuL_CMc5-f1OKLu5UsY/preview", title: "Video 9" },
-  { link: "https://drive.google.com/file/d/1ihjaegNHWiwYyETHx0dc7ICvaKGb_c7s/preview", title: "Video 90" },
-  { link: "https://drive.google.com/file/d/1HMxUZ0FMOU5UvIdrduoLNIRlY7h3MYo9/preview", title: "Video 91" },
-],
-]
-
-  let currentOpen = null;
-
-  function toggleFolder(id, index) {
-    const section = document.getElementById(id);
-    const grid = document.getElementById("grid" + index);
-
-    if (section.style.display === 'block') {
-      section.style.opacity = 0;
-      section.style.maxHeight = "0";
-      setTimeout(() => {
-        section.style.display = 'none';
-        grid.innerHTML = ""; // Xoá iframe khi đóng
-      }, 300);
-      currentOpen = null;
-    } else {
-      document.querySelectorAll('.folder-section').forEach((s, i) => {
-        s.style.opacity = 0;
-        s.style.maxHeight = "0";
-        setTimeout(() => {
-          s.style.display = 'none';
-          document.getElementById("grid" + i).innerHTML = "";
-        }, 300);
-      });
-
-      section.style.display = 'block';
-      section.style.opacity = 1;
-      section.style.maxHeight = "1000px";
-
-      // Tải video
-      grid.innerHTML = allVideos[index].map(v =>
-        `<div class="video">
-          <iframe allow="fullscreen" webkitallowfullscreen mozallowfullscreen src="${v.link}"></iframe>
-          <h3>${v.title}</h3>
-        </div>`
-      ).join("");
-
-      currentOpen = id;
-    }
-  }
-
-  document.getElementById("search").addEventListener("input", function() {
-    const keyword = this.value.toLowerCase();
-    document.querySelectorAll(".video").forEach(item => {
-      const title = item.querySelector("h3").innerText.toLowerCase();
-      item.style.display = title.includes(keyword) ? "block" : "none";
-    });
-  });
-</script>
-
+        searchInput.addEventListener("input", function() {
+            const query = this.value.toLowerCase();
+            cards.forEach(card => {
+                const title = card.getAttribute("data-title");
+                card.style.display = title.includes(query) ? "block" : "none";
+            });
+        });
+    </script>
 </body>
 </html>
