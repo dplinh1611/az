@@ -31,7 +31,7 @@
 <div id="main" style="display:none;">
   <h1>Danh sách Video</h1>
   <input type="text" id="search" placeholder="Tìm video...">
-<button class="folder-button" onclick="toggleFolder('folder0')">Mục 1</button><div class="folder-section" id="folder0"><div class="grid">
+<button class="folder-button" onclick="toggleFolder('folder0')">Vân</button><div class="folder-section" id="folder0"><div class="grid">
         <div class="video">
           <iframe src="https://drive.google.com/file/d/1ZTyzjoWUqkQ3ShHVysvjE4EzGYNjQEmC/preview" allowfullscreen></iframe>
           <h3>Video 1</h3>
@@ -151,7 +151,7 @@
           <iframe src="https://drive.google.com/file/d/1hV02nY71dVasr0iI3wX85jf_sEZrD3yA/preview" allowfullscreen></iframe>
           <h3>Video 30</h3>
         </div>
-        </div></div><button class="folder-button" onclick="toggleFolder('folder1')">Mục 2</button><div class="folder-section" id="folder1"><div class="grid">
+        </div></div><button class="folder-button" onclick="toggleFolder('folder1')">Trần Hà Linh</button><div class="folder-section" id="folder1"><div class="grid">
         <div class="video">
           <iframe src="https://drive.google.com/file/d/1cBhuStpGqIZts2fXaFn-ISO7ydamgTla/preview" allowfullscreen></iframe>
           <h3>Video 31</h3>
@@ -176,7 +176,7 @@
           <iframe src="https://drive.google.com/file/d/1P91HbxdyRjs-buNpgfdYIXdFA0CTA8Ny/preview" allowfullscreen></iframe>
           <h3>Video 35</h3>
         </div>
-        </div></div><button class="folder-button" onclick="toggleFolder('folder2')">Mục 3</button><div class="folder-section" id="folder2"><div class="grid">
+        </div></div><button class="folder-button" onclick="toggleFolder('folder2')">Yuna Ogura</button><div class="folder-section" id="folder2"><div class="grid">
         <div class="video">
           <iframe src="https://drive.google.com/file/d/1YPpXu8FtZQzXTsKK06lpCSk6BURmD3Qj/preview" allowfullscreen></iframe>
           <h3>Video 36</h3>
@@ -236,7 +236,7 @@
           <iframe src="https://drive.google.com/file/d/1vxP4EYAU9HsY1mMcBmrCT9scuccfHspy/preview" allowfullscreen></iframe>
           <h3>Video 46</h3>
         </div>
-        </div></div><button class="folder-button" onclick="toggleFolder('folder3')">Mục 4</button><div class="folder-section" id="folder3"><div class="grid">
+        </div></div><button class="folder-button" onclick="toggleFolder('folder3')">Min</button><div class="folder-section" id="folder3"><div class="grid">
         <div class="video">
           <iframe src="https://drive.google.com/file/d/1bmoOSBR4GFMPnypmOj-ac8-nlxmNk3NE/preview" allowfullscreen></iframe>
           <h3>Video 47</h3>
@@ -336,7 +336,7 @@
           <iframe src="https://drive.google.com/file/d/1TueqP3qjvqmcOug-qwXRR3n4CGXhSZME/preview" allowfullscreen></iframe>
           <h3>Video 64</h3>
         </div>
-        </div></div><button class="folder-button" onclick="toggleFolder('folder4')">Mục 5</button><div class="folder-section" id="folder4"><div class="grid">
+        </div></div><button class="folder-button" onclick="toggleFolder('folder4')">Mô</button><div class="folder-section" id="folder4"><div class="grid">
         <div class="video">
           <iframe src="https://drive.google.com/file/d/1w9gwC8z7vqGzIMUgV8jx3OnxxU5A7AOI/preview" allowfullscreen></iframe>
           <h3>Video 65</h3>
@@ -490,7 +490,7 @@
 </div>
 
 <script>
-  const PASSWORD = "matkhau123"; // Mật khẩu
+  const PASSWORD = "Tung2104";
 
   function checkPassword() {
     const input = document.getElementById("password").value;
@@ -502,7 +502,6 @@
     }
   }
 
-  
   let currentOpen = null;
 
   function toggleFolder(id) {
@@ -515,12 +514,6 @@
       section.style.display = 'block';
       currentOpen = id;
     }
-  }
-
-    document.querySelectorAll('.folder-section').forEach(section => {
-      section.style.display = 'none';
-    });
-    document.getElementById(id).style.display = 'block';
   }
 
   document.getElementById("search").addEventListener("input", function() {
